@@ -1,3 +1,4 @@
 requests
 git+git://github.com/amueller/word_cloud.git
+image
 matplotlib
