@@ -75,7 +75,7 @@ def save_to_file(filename):
         pass # already exists
     path = os.path.join(dest_dir, filename)
     f = open(path,"w")
-    f.write(" ".join(str_list))
+    f.write("\n".join(str_list))
     f.close()
 
 def main():
