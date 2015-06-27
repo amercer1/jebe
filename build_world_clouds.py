@@ -1,19 +1,22 @@
-from os import path
+import os
+import re
 #from scipy.misc import imread
 import matplotlib.pyplot as plt
 
 from wordcloud import WordCloud, STOPWORDS
 
-d = path.dirname(__file__)
-text_files = path.join(d, 'text_files')
-images = path.join(d, 'images')
+d = os.path.dirname(__file__)
+text_files = os.path.join(d, 'text_files')
+images = os.path.join(d, 'images')
 
-text = open(path.join(text_files, 'game_1.txt')).read()
+paths = [fn for fn in next(os.walk(text_files))[2]]
 
 
-# generate word cloud
-wc = WordCloud().generate(text)
-wc.generate(text)
-
-# store to file
-wc.to_file(path.join(images, "game_1.png"))
+for path in paths:
+    png_filename = re.sub(r'\.txt$', '.png', path)
+    text = open(os.path.join(text_files, path)).read()
+    # generate word cloud
+    wc = WordCloud(width=1000, height=500, margin=10).generate(text)
+    wc.generate(text)
+    # store to file
+    wc.to_file(os.path.join(images, png_filename))
