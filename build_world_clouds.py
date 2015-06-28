@@ -37,7 +37,7 @@ for path in paths:
     png_filename = re.sub(r'game', 'basketball_game', png_filename)
     text = open(os.path.join(text_files, path)).read()
     # generate word cloud
-    wc = WordCloud(max_words=1000, mask=mask, margin=10,
+    wc = WordCloud(max_words=1000, mask=mask,
                random_state=1).generate(text)
     wc.recolor(color_func=orange_color_func, random_state=3)
     wc.to_file(os.path.join(images, png_filename))
