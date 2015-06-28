@@ -48,7 +48,7 @@ def clean_string(s):
 
 def build_and_send_requests(url):
     headers = {
-        'User-Agent': 'linux:jebe.rnba.post.game.scraper:v0.1 (by /u/newTrickster)',
+        'User-Agent': 'linux:post.game.scraper:v0.1 (by /u/username_here)',
     }
 
     r = requests.get(url, headers=headers)
