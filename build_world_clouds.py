@@ -1,5 +1,7 @@
 import os
 import re
+import random
+
 from scipy.misc import imread
 import matplotlib.pyplot as plt
 
@@ -26,6 +28,10 @@ for path in paths:
 # http://www.clker.com/cliparts/Q/I/V/k/y/2/black-basketball-hi.png
 mask = imread(os.path.join(images, "basketball-silhouette.png"))
 
+def orange_color_func(word, font_size, position, orientation, random_state=None,
+                      **kwargs):
+    return "hsl(25, 100%%, %d%%)" % random.randint(60, 100)
+
 for path in paths:
     png_filename = re.sub(r'\.txt$', '.png', path)
     png_filename = re.sub(r'game', 'basketball_game', png_filename)
@@ -33,4 +39,5 @@ for path in paths:
     # generate word cloud
     wc = WordCloud(max_words=1000, mask=mask, margin=10,
                random_state=1).generate(text)
+    wc.recolor(color_func=orange_color_func, random_state=3)
     wc.to_file(os.path.join(images, png_filename))
