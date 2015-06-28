@@ -25,7 +25,7 @@ This should generate images in the images folder.
 
 Note: 
 
-You should be able to generate your own word clouds if your replace the list of r/nba threads in [scrape_reddit_threads.py](scrape_reddit_threads.py)with ever reddit threads of your chosing assuming reddit.com does not change the layout of their images in the future.
+You should be able to generate your own word clouds if your replace the list of r/nba threads in [scrape_reddit_threads.py](scrape_reddit_threads.py) with ever reddit threads of your chosing assuming reddit.com does not change the layout of their images in the future.
 
 
 ## Examples
