@@ -1,7 +1,7 @@
 jebe
 ==========
 
-A little word cloud generator for the Reddit Post Game threads.
+A little word cloud generator for the Reddit NBA Finals Post Game threads.
 
 ## Installation
 
